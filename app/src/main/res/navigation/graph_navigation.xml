@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/graph_navigation"
+    app:startDestination="@id/principalMenuFragment">
+
+    <fragment
+        android:id="@+id/customerFragment"
+        android:name="com.calseto.pizzassas.fragments.CustomerFragment"
+        android:label="fragment_customer"
+        tools:layout="@layout/fragment_customer" >
+        <action
+            android:id="@+id/action_customerFragment_to_pizzasMenuFragment"
+            app:destination="@id/pizzasMenuFragment" />
+        <action
+            android:id="@+id/action_customerFragment_to_ingresarOrderFragment"
+            app:destination="@id/ingresarOrderFragment" />
+        <action
+            android:id="@+id/action_customerFragment_to_principalMenuFragment"
+            app:destination="@id/principalMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ingresarOrderFragment"
+        android:name="com.calseto.pizzassas.fragments.IngresarOrderFragment"
+        android:label="fragment_ingresar_order"
+        tools:layout="@layout/fragment_ingresar_order" >
+        <action
+            android:id="@+id/action_ingresarOrderFragment_to_principalMenuFragment"
+            app:destination="@id/principalMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderCustomerFragment"
+        android:name="com.calseto.pizzassas.fragments.OrderCustomerFragment"
+        android:label="fragment_order_customer"
+        tools:layout="@layout/fragment_order_customer" >
+        <action
+            android:id="@+id/action_orderCustomerFragment_to_principalMenuFragment"
+            app:destination="@id/principalMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pizzasMenuFragment"
+        android:name="com.calseto.pizzassas.fragments.PizzasMenuFragment"
+        android:label="fragment_pizzas_menu"
+        tools:layout="@layout/fragment_pizzas_menu" >
+        <action
+            android:id="@+id/action_pizzasMenuFragment_to_principalMenuFragment"
+            app:destination="@id/principalMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/principalMenuFragment"
+        android:name="com.calseto.pizzassas.fragments.PrincipalMenuFragment"
+        android:label="fragment_principal_menu"
+        tools:layout="@layout/fragment_principal_menu" >
+        <action
+            android:id="@+id/action_principalMenuFragment_to_orderCustomerFragment"
+            app:destination="@id/orderCustomerFragment" />
+        <action
+            android:id="@+id/action_principalMenuFragment_to_customerFragment"
+            app:destination="@id/customerFragment" />
+        <action
+            android:id="@+id/action_principalMenuFragment_to_usuarioActivity"
+            app:destination="@id/usuarioActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/usuarioActivity"
+        android:name="com.calseto.pizzassas.UsuarioActivity"
+        android:label="activity_usuario"
+        tools:layout="@layout/activity_usuario" />
+</navigation>
